@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <animal id="1" name="Mia" gender="female" />
+  <animal id="2" name="Pelucha" gender="female" />
+  <animal id="3" name="Popeye" gender="male" />
+  <animal id="4" name="Rambo" gender="male" />
+</dataset>
