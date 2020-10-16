@@ -42,8 +42,7 @@ public class AnimalsManagementControllerUnitTest {
         Animal mockAnimal = new Animal();
         mockAnimal.setName("Popeye");
 
-        when(animalsManagementService.add(any(Animal.class)))
-                .thenReturn(mockAnimal);
+        when(animalsManagementService.add(any(Animal.class))).thenReturn(mockAnimal);
 
         // simulate the form bean that would POST from the web page
         Animal aAnimal = new Animal();
@@ -51,8 +50,7 @@ public class AnimalsManagementControllerUnitTest {
         aAnimal.setGender("male");
 
         // simulate the form submit (POST)
-        mockMvc
-                .perform(post("/addAnimal", aAnimal))
+        mockMvc.perform(post("/addAnimal", aAnimal))
                 .andExpect(status().isOk())
                 .andReturn();
     }
@@ -68,8 +66,7 @@ public class AnimalsManagementControllerUnitTest {
         aAnimal.setGender("male");
 
         // simulate the form submit (POST)
-        mockMvc
-                .perform(post("/addAnimal", aAnimal))
+        mockMvc.perform(post("/addAnimal", aAnimal))
                 .andExpect(status().is(302))
                 .andReturn();
     }

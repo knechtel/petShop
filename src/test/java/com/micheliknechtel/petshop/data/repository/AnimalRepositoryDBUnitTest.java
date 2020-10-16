@@ -29,7 +29,7 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
         DbUnitTestExecutionListener.class })
 @DatabaseSetup("classpath:test-datasets.xml")
 
-public class AnimalRepositoryUnitTest {
+public class AnimalRepositoryDBUnitTest {
 
     @Autowired
     private TestEntityManager entityManager;
@@ -39,19 +39,14 @@ public class AnimalRepositoryUnitTest {
 
     @Test
     public void testFindByName() {
-
-        // Find an inserted record
         Animal foundAnimal = animalRepository.findByName("Rambo");
-
         assertThat(foundAnimal.getName(), is(equalTo("Rambo")));
     }
 
     @Test
     public void testFindSpecificContactByIdBypassReposClass() {
 
-        // Find an inserted record
         Animal foundAnimal = entityManager.find(Animal.class, new Long("2"));
-
         assertThat(foundAnimal.getName(), is(equalTo("Rambo")));
     }
 }

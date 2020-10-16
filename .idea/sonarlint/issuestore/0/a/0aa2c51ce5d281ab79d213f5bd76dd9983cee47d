@@ -1,0 +1,8 @@
+
+`
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ØÆ™î
+k
+java:S1128
+"PRemove this unused import 'org.springframework.web.bind.annotation.RequestBody'.(â­½Àýÿÿÿÿ
+[
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(‡ËÀ¾ûÿÿÿÿ
