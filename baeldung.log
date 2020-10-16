@@ -1,0 +1,17 @@
+2020-10-16 12:24:06 INFO  Starting AnimalsManagementControllerUnitTest on Michelis-MacBook-Pro.local with PID 10714 (started by micheliknechtel in /Users/micheliknechtel/Desktop/pole emploi/gitProjects/petshop)
+2020-10-16 12:24:06 INFO  No active profile set, falling back to default profiles: default
+2020-10-16 12:24:06 INFO  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@46b61c56: startup date [Fri Oct 16 12:24:06 CEST 2020]; root of context hierarchy
+2020-10-16 12:24:06 INFO  HV000001: Hibernate Validator 5.3.5.Final
+2020-10-16 12:24:07 INFO  Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@46b61c56: startup date [Fri Oct 16 12:24:06 CEST 2020]; root of context hierarchy
+2020-10-16 12:24:07 INFO  Mapped "{[/addAnimal],methods=[POST]}" onto public java.lang.String com.micheliknechtel.petshop.controller.AnimalsManagementController.processAddAnimalSubmit(com.micheliknechtel.petshop.domain.Animal)
+2020-10-16 12:24:07 INFO  Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-10-16 12:24:07 INFO  Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-10-16 12:24:07 INFO  Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-10-16 12:24:07 INFO  Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-10-16 12:24:07 INFO  Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-10-16 12:24:07 INFO  Initializing Spring FrameworkServlet ''
+2020-10-16 12:24:07 INFO  FrameworkServlet '': initialization started
+2020-10-16 12:24:07 INFO  FrameworkServlet '': initialization completed in 12 ms
+2020-10-16 12:24:07 INFO  Started AnimalsManagementControllerUnitTest in 1.923 seconds (JVM running for 3.099)
+2020-10-16 12:24:07 INFO  {"payload":"{\"id\":0}","action":"USER"}
+2020-10-16 12:24:07 INFO  Closing org.springframework.web.context.support.GenericWebApplicationContext@46b61c56: startup date [Fri Oct 16 12:24:06 CEST 2020]; root of context hierarchy

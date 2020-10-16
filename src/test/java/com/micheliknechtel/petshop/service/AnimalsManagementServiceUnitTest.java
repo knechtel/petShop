@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
-@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class AnimalsManagementServiceUnitTest {
 
@@ -33,19 +34,17 @@ public class AnimalsManagementServiceUnitTest {
     @Test
     public void testAddContactHappyPath() {
 
-        // Create a contact
+        // Create an animal
         Animal mockAnimal = new Animal();
-        mockAnimal.setName("Pelucha");
+        mockAnimal.setName("Nougat");
         mockAnimal.setGender("Female");
 
         when(animalRepository.save(any(Animal.class))).thenReturn(mockAnimal);
 
-        // Save the contact
+        // Save the animal
         Animal aAnimal = animalsManagementService.add(null);
 
         // Verify the save
-        assertEquals("Pelucha", aAnimal.getName());
-
-
+        assertEquals("Nougat", aAnimal.getName());
     }
 }
