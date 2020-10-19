@@ -8,6 +8,9 @@ docker-compose build
 docker-compose up
 ```
 
+Login: root
+MDP: example
+
 ## Les sujets (ordre chronologique ascendant)
 | Sujet | ID / tag commit |
 | --------------- | ----- |
