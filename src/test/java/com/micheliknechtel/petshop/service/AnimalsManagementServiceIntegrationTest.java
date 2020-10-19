@@ -1,6 +1,8 @@
 package com.micheliknechtel.petshop.service;
 
 import com.micheliknechtel.petshop.domain.Animal;
+import com.micheliknechtel.petshop.util.DatabaseCleaner;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,14 @@ public class AnimalsManagementServiceIntegrationTest {
 
     @Autowired
     private AnimalsManagementService animalsManagementService;
+
+    @Autowired
+    private DatabaseCleaner databaseCleaner;
+
+    @After
+    public void tearDown() {
+        databaseCleaner.truncate();
+    }
 
     @Test
     public void testAddAnimalHappyPath() {
