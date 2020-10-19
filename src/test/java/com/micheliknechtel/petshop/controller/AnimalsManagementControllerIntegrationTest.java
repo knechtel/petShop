@@ -1,10 +1,8 @@
 package com.micheliknechtel.petshop.controller;
 
 import com.micheliknechtel.petshop.domain.Animal;
-import com.micheliknechtel.petshop.controller.AnimalsManagementController;
-
-
-import org.hamcrest.CoreMatchers;
+import com.micheliknechtel.petshop.util.DatabaseCleaner;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +20,14 @@ public class AnimalsManagementControllerIntegrationTest {
     @Autowired
     public AnimalsManagementController animalsManagementController;
 
+    @Autowired
+    private DatabaseCleaner databaseCleaner;
+
+    @After
+    public void tearDown() {
+        databaseCleaner.truncate();
+    }
+
     @Test
     public void testAddAnimalHappyPath() {
 
@@ -32,12 +38,11 @@ public class AnimalsManagementControllerIntegrationTest {
         String outcome = animalsManagementController.processAddAnimalSubmit(aAnimal);
 
         // Assert THAT the outcome is as expected
-        assertThat(outcome,is(equalTo("success")));
+        assertThat(outcome, is(equalTo("success")));
     }
 
     @Test
     public void testAddAnimalNameMissing() {
-
         Animal aAnimal = new Animal();
         // POST our Animal form bean to the controller; check the outcome
 

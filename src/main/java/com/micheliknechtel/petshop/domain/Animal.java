@@ -1,27 +1,28 @@
 package com.micheliknechtel.petshop.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
 @Table(name = "animal")
 public class Animal {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String category;
     private String breed;
     private String gender;
     private String color;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY, mappedBy = "animal")
+    private Set<Puppy> puppies = new HashSet<>();
 
     public Animal() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
     }
@@ -68,5 +69,14 @@ public class Animal {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public Set<Puppy> getPuppies() {
+        return puppies;
+    }
+
+    public void addPuppy(Puppy puppy) {
+        puppies.add(puppy);
+        puppy.setAnimal(this);
     }
 }

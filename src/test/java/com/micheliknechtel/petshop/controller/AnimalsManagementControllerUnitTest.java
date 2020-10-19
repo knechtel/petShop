@@ -55,20 +55,4 @@ public class AnimalsManagementControllerUnitTest {
                 .andReturn();
     }
 
-    @Test
-    public void testAddAnimalBizServiceRuleNotSatisfied() throws Exception {
-        // setup a mock response of NULL object returned from the mock service component
-        when(animalsManagementService.add(any(Animal.class)))
-                .thenReturn(null);
-
-        // simulate the form bean that would POST from the web page
-        Animal aAnimal = new Animal();
-        aAnimal.setGender("male");
-
-        // simulate the form submit (POST)
-        mockMvc.perform(post("/addAnimal", aAnimal))
-                .andExpect(status().is(302))
-                .andReturn();
-    }
-
 }
